@@ -1,0 +1,30 @@
+{
+  "name": "desde0",
+  "version": "1.0.0",
+  "description": "Learning-Mean-Angular",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JobValdez/Learning-Mean---Angulador.git"
+  },
+  "keywords": [
+    "Mean",
+    "Stack",
+    "With",
+    "Angular",
+    "2"
+  ],
+  "author": "Job Valdez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JobValdez/Learning-Mean---Angulador/issues"
+  },
+  "homepage": "https://github.com/JobValdez/Learning-Mean---Angulador#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.2.6"
+  }
+}
