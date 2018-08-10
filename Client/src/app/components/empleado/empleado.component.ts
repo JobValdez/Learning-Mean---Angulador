@@ -24,7 +24,7 @@ export class EmpleadoComponent implements OnInit {
       this.empleadoService.putEmpleado(form.value)
       .subscribe(res =>{
         this.resetForm(form);
-        M.toast({html: 'Empleado Actualizado sastifactoriamente'});
+        alert('Empleado Actualizado sastifactoriamente');
         this.getEmpleados();
       });
 
@@ -32,7 +32,7 @@ export class EmpleadoComponent implements OnInit {
   	this.empleadoService.postEmpleado(form.value)
   	.subscribe(res =>{
   		this.resetForm(form);
-  		M.toast({html: 'Empleado Guardado sastifactoriamente'});
+  		alert('Empleado Guardado sastifactoriamente');
       this.getEmpleados();
   	});
     }
@@ -50,7 +50,7 @@ export class EmpleadoComponent implements OnInit {
     var nombre = empleado.f_name;
     if(confirm('Quieres editar a: ' + nombre)) {
     this.empleadoService.selecionarEmpleado = empleado;
-     M.toast({html:'Estas editando al empleado: ' + nombre});
+    alert('Estas editando al cliente: ' + nombre);
     }
   }
 
@@ -59,7 +59,7 @@ export class EmpleadoComponent implements OnInit {
       this.empleadoService.deleteEmpleado(_id)
       .subscribe(res =>{
         this.getEmpleados();
-        M.toast({html: 'Eliminado Sastifactiamente'});
+        alert('Eliminado Sastifactiamente');
       });
     }
   }

@@ -25,7 +25,7 @@ export class ClientesComponent implements OnInit {
       this.clienteService.putCliente(form.value)
       .subscribe(res =>{
         this.resetForm(form);
-        M.toast({html: 'Cliente Actualizado sastifactoriamente'});
+        alert('Cliente Actualizado sastifactoriamente');
         this.getCliente();
       });
 
@@ -33,7 +33,7 @@ export class ClientesComponent implements OnInit {
   	this.clienteService.postCliente(form.value)
   	.subscribe(res =>{
   		this.resetForm(form);
-  		M.toast({html: 'Cliente Guardado sastifactoriamente'});
+      alert('Cliente Guardado sastifactoriamente');
       this.getCliente();
   	});
     }
@@ -51,7 +51,7 @@ export class ClientesComponent implements OnInit {
     var nombre = cliente.f_nombre;
     if(confirm('Quieres editar a: ' + nombre)) {
     this.clienteService.selecionarCliente = cliente;
-     M.toast({html:'Estas editando al cliente: ' + nombre});
+     alert('Estas editando al cliente: ' + nombre);
     }
   }
 
@@ -60,7 +60,7 @@ export class ClientesComponent implements OnInit {
       this.clienteService.deleteCliente(_id)
       .subscribe(res =>{
         this.getCliente();
-        M.toast({html: 'Eliminado Sastifactiamente'});
+        alert('Eliminado Sastifactiamente');
       });
     }
   }
