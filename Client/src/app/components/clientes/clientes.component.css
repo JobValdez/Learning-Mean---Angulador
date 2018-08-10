@@ -1,0 +1,26 @@
+.contenedor1{
+  position: relative;
+  margin-top: 30px;
+  width: 48%;
+  border:solid 1px #000;
+  border-radius: 4px;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.contenedor1, .contenedor2{
+  position: relative;
+  margin-top: 30px;
+  width: 48%;
+  border:solid 1px #000;
+  border-radius: 4px;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.contenedor1{
+  float: left;
+}
+
+.contenedor2{
+  float:right;
+  margin-right: 10px;
+}

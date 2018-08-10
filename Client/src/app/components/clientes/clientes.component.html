@@ -1,0 +1,81 @@
+<div class="col-md-12"><br>
+<h4> Crear Clientes o Editar Clientes</h4>
+	<div class="contenedor1">
+		<div class="container"><br>
+
+			<form #clienteForm="ngForm" (ngSubmit) = "addCliente(clienteForm)">
+				<div class="form-row">
+					<input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="clienteService.selecionarCliente._id">
+
+					<div class="form-group col-md-6">
+						<label for="f_nombre">Nombre</label>
+						<input type="text" name="f_nombre" #f_nombre = "ngModel" [(ngModel)]="clienteService.selecionarCliente.f_nombre" placeholder="Nombre" class="form-control">
+					</div>
+					<div class="form-group col-md-6">
+						<label for="f_idcliente">Id para el cliente</label>
+						<input type="text" name="f_idcliente" #f_idcliente = "ngModel" [(ngModel)]="clienteService.selecionarCliente.f_idcliente" placeholder=" ID cliente" class="form-control">
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="f_telefono">Telefono</label>
+						<input type="text" name="f_telefono" #f_telefono = "ngModel" [(ngModel)]="clienteService.selecionarCliente.f_telefono" placeholder="Telefono" class="form-control">
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="f_email">Correo</label>
+						<input type="text" name="f_email" #f_email = "ngModel" [(ngModel)]="clienteService.selecionarCliente.f_email" placeholder="Correo" class="form-control">
+					</div>
+
+					<div class="form-group col-md-12">
+						<label for="f_direccion">Direccion</label>
+						<input type="text" name="f_direccion" #f_direccion = "ngModel" [(ngModel)]="clienteService.selecionarCliente.f_direccion" placeholder="Direccion" class="form-control">
+					</div>
+
+					<div class="form-group col-md-6">
+						<button class="btn btn-primary" (click)="resetForm(clienteForm)">Limpiar</button>
+					</div>
+
+					<div class="form-group col-md-6">
+						<button class="btn btn-primary" type="" >Guardar</button>
+					</div>
+
+			    </div>	
+			</form>										
+		</div>
+	</div>
+</div>
+
+
+<div class="contenedor2">
+	<div class="container">
+		<div class="col-md-12 table-responsive"><br>
+			<h4>Listado de Clientes</h4>
+			<table class="table table-hover table-striped table-sm table-bordered">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Telefono</th>
+						<th>Direccion</th>
+						<th>Operaciones</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr *ngFor="let cliente of clienteService.clientes">
+						<td>{{ cliente.f_nombre}}</td>
+						<td>{{ cliente.f_telefono}}</td>
+						<td>{{ cliente.f_direccion}}</td>
+						<td>
+							<a (click)="editCliente(cliente)">
+								<i class="material-icons" style="margin-right: 20px; cursor: pointer;">edit</i>
+							</a>
+							<a (click)="deleteCliente(cliente._id)">
+								<i class="material-icons" style="cursor: pointer;">delete</i>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>		
+		</div>
+	</div>	
+</div>

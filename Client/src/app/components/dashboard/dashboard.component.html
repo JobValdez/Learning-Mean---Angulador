@@ -1,0 +1,13 @@
+<p>
+  dashboard works!
+</p>
+<div class="container">
+	<p>hello word</p>
+	
+</div>
+
+	<button (click)="show = !show">CLICK ME</button>
+    show = {{show}}
+    <br>
+    <div *ngIf="show; else elseBlock">Text to show</div>
+    <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>	
